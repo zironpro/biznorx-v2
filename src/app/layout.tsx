@@ -20,7 +20,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Flowblox",
+  title: "Biznorx",
   description: "Streamline Your Team, Supercharge Your Workflow",
 };
 
