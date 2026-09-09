@@ -57,12 +57,20 @@ export function HeroSection() {
         </p>
         
         {/* CTA */}
-        <Button className="rounded-full pl-6 pr-2 py-5 gap-3 text-sm md:text-base bg-gradient-to-r from-biznorx-red to-biznorx-deep-red hover:opacity-90 h-11 md:h-12 z-20 relative border-0">
-          Start Hiring Now
-          <div className="bg-white/20 rounded-full p-1 md:p-1.5 flex items-center justify-center">
-            <ArrowRight className="w-4 h-4 text-white" />
-          </div>
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Button className="rounded-full pl-6 pr-2 py-5 gap-3 text-sm md:text-base bg-gradient-to-r from-biznorx-red to-biznorx-deep-red hover:opacity-90 h-11 md:h-12 z-20 relative border-0 w-full sm:w-auto">
+            Hire Talent
+            <div className="bg-white/20 rounded-full p-1 md:p-1.5 flex items-center justify-center">
+              <ArrowRight className="w-4 h-4 text-white" />
+            </div>
+          </Button>
+          <Button variant="outline" className="group rounded-full pl-6 pr-2 py-5 gap-3 text-sm md:text-base border-2 border-biznorx-navy text-biznorx-navy hover:bg-biznorx-navy hover:text-white transition-colors h-11 md:h-12 z-20 relative w-full sm:w-auto">
+            Find Jobs
+            <div className="bg-biznorx-navy/10 rounded-full p-1 md:p-1.5 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+              <ArrowRight className="w-4 h-4 text-biznorx-navy group-hover:text-white transition-colors" />
+            </div>
+          </Button>
+        </div>
       </div>
 
       {/* Curved Images Layout */}

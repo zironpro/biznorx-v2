@@ -11,7 +11,7 @@ export function Navbar() {
           <Link href="/services" className="hover:text-biznorx-red transition-colors">Services</Link>
           <Link href="/features" className="hover:text-biznorx-red transition-colors">Features</Link>
           <Link href="/blog" className="hover:text-biznorx-red transition-colors">Blog</Link>
-          <Link href="/services" className="hover:text-biznorx-red transition-colors">Services</Link>
+          {/* <Link href="/services" className="hover:text-biznorx-red transition-colors">Services</Link> */}
         </div>
 
         {/* Logo */}
@@ -24,7 +24,7 @@ export function Navbar() {
         {/* Right Links & CTA */}
         <div className="hidden md:flex items-center gap-6 text-base font-medium text-neutral-600">
           <Link href="/about" className="hover:text-biznorx-red transition-colors">About</Link>
-          <Link href="/pricing" className="hover:text-biznorx-red transition-colors">Pricing</Link>
+          {/* <Link href="/pricing" className="hover:text-biznorx-red transition-colors">Pricing</Link> */}
           <Link href="/contact" className="hover:text-biznorx-red transition-colors">Contact</Link>
           <Button className="rounded-full pl-5 pr-2 gap-2 text-base bg-gradient-to-r from-biznorx-deep-red to-biznorx-red hover:opacity-90 h-10 border-0">
             Get started 
