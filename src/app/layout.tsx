@@ -22,6 +22,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Biznorx",
   description: "Streamline Your Team, Supercharge Your Workflow",
+  icons: {
+    icon: "/logo/icon.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

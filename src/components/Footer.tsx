@@ -14,7 +14,7 @@ export function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-12 mb-8 md:mb-16">
           {/* Column 1 - Brand */}
           <div className="col-span-2 lg:col-span-1 flex flex-col gap-6 items-start text-left">
-            <img src="/logo/logo.png" alt="BiznorX Logo" className="w-auto h-auto max-h-12 object-contain brightness-0 invert" />
+            <img src="/logo/logo-secondary.png" alt="BiznorX Logo" className="w-auto h-auto max-h-24 object-contain" />
             <p className="text-white/60 leading-relaxed text-sm lg:pr-4">
               The premier recruiting agency connecting ambitious professionals with industry-leading companies globally.
             </p>

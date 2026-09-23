@@ -70,7 +70,7 @@ export function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0 flex justify-center">
             <Link href="/" className="block">
-              <img src="/logo/logo.png" alt="BiznorX Logo" className="w-auto h-auto max-h-8 md:max-h-10" />
+              <img src="/logo/logo.png" alt="BiznorX Logo" className="w-auto h-auto max-h-12 md:max-h-16" />
             </Link>
           </div>
 
@@ -136,7 +136,7 @@ export function Navbar() {
 
               {/* Logo Header */}
               <div className="flex items-center justify-center px-6 pb-6 border-b border-neutral-100 shrink-0">
-                <img src="/logo/logo.png" alt="BiznorX Logo" className="w-32 h-auto object-contain" />
+                <img src="/logo/logo.png" alt="BiznorX Logo" className="w-36 md:w-48 h-auto object-contain" />
               </div>
 
               {/* Scrollable Links */}
