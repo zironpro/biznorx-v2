@@ -1,6 +1,7 @@
 "use client"
 
-import { MapPin, Mail, Linkedin, Instagram, Facebook, MessageCircle } from "lucide-react"
+import { MapPin, Mail, MessageCircle } from "lucide-react"
+import { FacebookIcon, LinkedinIcon, InstagramIcon } from "@/components/icons/SocialIcons"
 
 const CONTACT_METHODS = [
   { Icon: MessageCircle, label: "India Office", value: "+91 9004072449",  href: "https://wa.me/919004072449",  color: "hover:text-green-600", bg: "group-hover:bg-green-50" },
@@ -9,9 +10,9 @@ const CONTACT_METHODS = [
 ]
 
 const SOCIAL_LINKS = [
-  { Icon: Instagram,  href: "https://www.instagram.com/biznorx", label: "Instagram" },
-  { Icon: Linkedin,   href: "https://www.linkedin.com/company/biznorx/", label: "LinkedIn" },
-  { Icon: Facebook,   href: "#",                                  label: "Facebook" },
+  { Icon: InstagramIcon,  href: "https://www.instagram.com/biznorx", label: "Instagram" },
+  { Icon: LinkedinIcon,   href: "https://www.linkedin.com/company/biznorx/", label: "LinkedIn" },
+  { Icon: FacebookIcon,   href: "#",                                  label: "Facebook" },
 ]
 
 export function ContactInfo() {

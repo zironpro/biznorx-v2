@@ -26,14 +26,14 @@ export function HeroSection() {
     const animate = (time: number) => {
       const deltaTime = time - lastTime
       lastTime = time
-      
+
       // Control the speed of the carousel here (units per ms)
-      const speed = 0.0006 
+      const speed = 0.0006
       setScrollOffset(prev => prev + deltaTime * speed)
-      
+
       animationFrameId = requestAnimationFrame(animate)
     }
-    
+
     animationFrameId = requestAnimationFrame(animate)
     return () => cancelAnimationFrame(animationFrameId)
   }, [])
@@ -41,7 +41,7 @@ export function HeroSection() {
   return (
     <section className="w-full bg-white flex flex-col items-center justify-center min-h-[calc(100vh-72px)] py-8 md:py-12 overflow-hidden">
       <div className="container-master flex flex-col items-center text-center">
-        
+
         {/* Typography */}
         <h1 className="flex flex-col gap-1 md:gap-2 mb-4">
           <span className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl text-biznorx-navy tracking-tight">
@@ -51,12 +51,12 @@ export function HeroSection() {
             Build World-Class Teams
           </span>
         </h1>
-        
+
         <p className="text-sm md:text-base text-slate-600 max-w-lg mx-auto mb-6 font-medium">
-          The premier recruiting agency connecting ambitious professionals <br className="hidden sm:block"/>
+          The premier recruiting agency connecting ambitious professionals <br className="hidden sm:block" />
           with industry-leading companies.
         </p>
-        
+
         {/* CTA */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button asChild className="rounded-full pl-6 pr-2 py-5 gap-3 text-sm md:text-base bg-gradient-to-r from-biznorx-red to-biznorx-deep-red hover:opacity-90 h-11 md:h-12 z-20 relative border-0 w-full sm:w-auto cursor-pointer">
@@ -78,10 +78,9 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Curved Images Layout */}
-      <div 
-        className="w-full max-w-[1000px] mx-auto flex justify-center items-center h-[300px] md:h-[460px] relative mb-12 md:mb-16 -mt-8 md:-mt-8 md:mt-16"
-        style={{ perspective: '800px' }}
+      {/* Flat Images Layout - Full Width */}
+      <div
+        className="w-full mx-auto flex justify-center items-center h-[300px] md:h-[400px] relative mb-12 md:mb-16 -mt-8 md:mt-8 overflow-hidden"
       >
         {portraits.map((src, i) => {
           const total = portraits.length;
@@ -89,29 +88,29 @@ export function HeroSection() {
           const rawOffset = i - 3 + scrollOffset;
           const offset = ((rawOffset + 3.5) % total + total) % total - 3.5;
           const absOffset = Math.abs(offset);
-          
+
           // Fade out the cards when they reach the extreme edges so they don't visibly snap back
           const opacity = Math.max(0, 1 - Math.max(0, absOffset - 2.5));
 
           return (
             <div
               key={i}
-              // Removed transition-transform so the requestAnimationFrame applies instantly without stuttering
-              className="absolute rounded-xl md:rounded-[24px] overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] bg-neutral-100"
+              className="absolute rounded-xl md:rounded-[24px] overflow-hidden shadow-xl bg-neutral-100"
               style={{
-                width: 'clamp(100px, 18vw, 200px)',
-                aspectRatio: '3/4.2',
-                left: `calc(50% + ${offset} * clamp(85px, 15vw, 170px))`,
-                transform: `translateX(-50%) translateZ(${(absOffset - 1.2) * 140}px) rotateY(${offset * -18}deg)`,
-                zIndex: Math.round(absOffset * 10),
+                width: 'clamp(160px, 25vw, 280px)',
+                aspectRatio: '1/1',
+                // Keep a small gap relative to the width
+                left: `calc(50% + ${offset} * clamp(170px, 26vw, 295px))`,
+                // Inverse scale: Center is smaller (0.8), edges grow larger
+                transform: `translateX(-50%) scale(${0.8 + absOffset * 0.15})`,
+                zIndex: Math.round((3 - absOffset) * 10),
                 opacity,
               }}
             >
-              <img 
-                src={src} 
-                alt="Team member" 
-                className="absolute inset-0"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              <img
+                src={src}
+                alt="Team member"
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
           )
