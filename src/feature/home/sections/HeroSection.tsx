@@ -88,9 +88,11 @@ const css = `
   }
   .fb-box {
     --s: tan(atan2(100cqw, 823px));
+    --trim-top: 40px;      /* blank space cut above the images */
+    --trim-bottom: 56px;   /* blank space cut below the images */
     position: relative;
     width: 100%;
-    height: calc(386px * var(--s));
+    height: calc((386px - var(--trim-top) - var(--trim-bottom)) * var(--s));
     overflow: hidden;
   }
   .fb-images {
@@ -100,7 +102,7 @@ const css = `
     width: 823px;
     height: 386px;
     transform-origin: 0 0;
-    transform: scale(var(--s));
+    transform: scale(var(--s)) translateY(calc(var(--trim-top) * -1));
   }
   .fb-card {
     position: absolute;
@@ -186,7 +188,7 @@ export function HeroSection() {
 
   return (
     <section 
-      className="w-full bg-white flex flex-col items-center justify-start min-h-[calc(100vh-72px)] pt-12 md:pt-16 pb-0 overflow-hidden"
+      className="w-full bg-white flex flex-col items-center justify-start min-h-[calc(100vh-72px)] pt-12 md:pt-16 pb-16 md:pb-24 overflow-hidden"
     >
       <style dangerouslySetInnerHTML={{ __html: css }} />
       
@@ -226,8 +228,8 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* The 3D Canvas pulled up to eliminate visual white space */}
-      <div className="fb-image-container container-master relative z-10 w-full -mt-4 md:-mt-12">
+      {/* The 3D Canvas sits immediately below the buttons naturally with CSS trim applied */}
+      <div className="fb-image-container container-master relative z-10 w-full mt-4 md:mt-8">
         <div className="fb-box">
           <div className="fb-images">
             <div
