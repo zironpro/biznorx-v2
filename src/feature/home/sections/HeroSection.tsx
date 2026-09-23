@@ -145,13 +145,16 @@ const css = `
 
 export function HeroSection() {
   const portraits = [
-    "https://i.pravatar.cc/300?img=33",
-    "https://i.pravatar.cc/300?img=11",
-    "https://i.pravatar.cc/300?img=12",
-    "https://i.pravatar.cc/300?img=5",
-    "https://i.pravatar.cc/300?img=15",
-    "https://i.pravatar.cc/300?img=32",
-    "https://i.pravatar.cc/300?img=59",
+    "/images/hero/professional_executive.jpg",
+    "/images/hero/young_professional.jpg",
+    "/images/hero/tech_engineer.jpg",
+    "/images/hero/creative_woman.jpg",
+    "/images/hero/corporate_leader.jpg",
+    "/images/hero/confident_manager.jpg",
+    "/images/hero/creative_designer.jpg",
+    "/images/hero/remote_worker.jpg",
+    "/images/hero/business_analyst.jpg",
+    "/images/hero/tech_founder.jpg",
   ]
 
   // Attach portraits to items data
