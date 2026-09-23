@@ -10,16 +10,16 @@ type Quad = [Pt, Pt, Pt, Pt];
 type Item = { bg: string; skin: string; cloth: string; src?: string };
 
 const SLOTS: Quad[] = [
-  [[-250, 170], [-90, 207], [-90, 563], [-250, 620]],
-  [[-90, 207], [40, 247], [40, 497], [-90, 563]],
-  [[53, 262], [190, 295], [190, 460], [53, 500]],
-  [[198, 302], [300, 315], [300, 446], [198, 461]],
-  [[306, 318], [393, 322], [393, 441], [306, 446]],
-  [[399, 321], [485, 318], [485, 443], [399, 440]],
-  [[492, 311], [588, 305], [588, 457], [492, 447]],
-  [[596, 281], [722, 273], [722, 488], [596, 455]],
-  [[733, 256], [880, 236], [880, 540], [733, 506]],
-  [[880, 236], [1050, 205], [1050, 610], [880, 540]],
+  [[-250, -30], [-90, 7], [-90, 363], [-250, 420]],
+  [[-90, 7], [40, 47], [40, 297], [-90, 363]],
+  [[53, 62], [190, 95], [190, 260], [53, 300]],
+  [[198, 102], [300, 115], [300, 246], [198, 261]],
+  [[306, 118], [393, 122], [393, 241], [306, 246]],
+  [[399, 121], [485, 118], [485, 243], [399, 240]],
+  [[492, 111], [588, 105], [588, 257], [492, 247]],
+  [[596, 81], [722, 73], [722, 288], [596, 255]],
+  [[733, 56], [880, 36], [880, 340], [733, 306]],
+  [[880, 36], [1050, 5], [1050, 410], [880, 340]],
 ];
 const OPACITY = [0, 1, 1, 1, 1, 1, 1, 1, 1, 0];
 const FADE_L = [1, 1, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -83,17 +83,14 @@ const css = `
   .fb-image-container {
     container-type: inline-size;
     width: 100%;
-    max-width: 1100px;
     margin: 0 auto;
     position: relative;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
   }
   .fb-box {
     --s: tan(atan2(100cqw, 823px));
     position: relative;
     width: 100%;
-    height: calc(586px * var(--s));
+    height: calc(386px * var(--s));
     overflow: hidden;
   }
   .fb-images {
@@ -101,7 +98,7 @@ const css = `
     left: 0;
     top: 0;
     width: 823px;
-    height: 586px;
+    height: 386px;
     transform-origin: 0 0;
     transform: scale(var(--s));
   }
@@ -189,49 +186,48 @@ export function HeroSection() {
 
   return (
     <section 
-      className="w-full bg-white flex flex-col items-center justify-center min-h-[calc(100vh-72px)] py-8 md:py-12 overflow-hidden"
+      className="w-full bg-white flex flex-col items-center justify-start min-h-[calc(100vh-72px)] pt-12 md:pt-16 pb-0 overflow-hidden"
     >
-      {/* Flowblox-style Exact Image Layout */}
       <style dangerouslySetInnerHTML={{ __html: css }} />
-      <div className="fb-image-container relative">
-        
-        {/* Absolute Typography & CTA Overlay */}
-        <div className="absolute top-0 left-0 w-full z-20 flex flex-col items-center text-center pointer-events-none pt-4 md:pt-8">
-          {/* Typography */}
-          <h1 className="flex flex-col gap-1 md:gap-2 mb-4 pointer-events-auto">
-            <span className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl text-biznorx-navy tracking-tight">
-              Find Top Talent,
-            </span>
-            <span className="font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-biznorx-deep-red to-biznorx-red pb-2 md:pb-4">
-              Build World-Class Teams
-            </span>
-          </h1>
+      
+      {/* Typography & CTA in normal document flow */}
+      <div className="container-master relative z-20 flex flex-col items-center text-center">
+        <h1 className="flex flex-col gap-1 md:gap-2 mb-4">
+          <span className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl text-biznorx-navy tracking-tight">
+            Find Top Talent,
+          </span>
+          <span className="font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-biznorx-deep-red to-biznorx-red pb-2 md:pb-4">
+            Build World-Class Teams
+          </span>
+        </h1>
 
-          <p className="text-sm md:text-base text-slate-600 max-w-lg mx-auto mb-6 font-medium pointer-events-auto">
-            The premier recruiting agency connecting ambitious professionals <br className="hidden sm:block" />
-            with industry-leading companies.
-          </p>
+        <p className="text-sm md:text-base text-slate-600 max-w-lg mx-auto mb-6 font-medium">
+          The premier recruiting agency connecting ambitious professionals <br className="hidden sm:block" />
+          with industry-leading companies.
+        </p>
 
-          {/* CTA */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pointer-events-auto">
-            <Button asChild className="rounded-full pl-6 pr-2 py-5 gap-3 text-sm md:text-base bg-gradient-to-r from-biznorx-red to-biznorx-deep-red hover:opacity-90 h-11 md:h-12 border-0 w-full sm:w-auto cursor-pointer">
-              <Link href="/contact">
-                Hire Talent
-                <div className="bg-white/20 rounded-full p-1 md:p-1.5 flex items-center justify-center">
-                  <ArrowRight className="w-4 h-4 text-white" />
-                </div>
-              </Link>
-            </Button>
-            <Button asChild variant="outline" className="group rounded-full pl-6 pr-2 py-5 gap-3 text-sm md:text-base border-2 border-biznorx-navy text-biznorx-navy hover:bg-biznorx-navy hover:text-white transition-colors h-11 md:h-12 w-full sm:w-auto cursor-pointer">
-              <Link href="/careers">
-                Find Jobs
-                <div className="bg-biznorx-navy/10 rounded-full p-1 md:p-1.5 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                  <ArrowRight className="w-4 h-4 text-biznorx-navy group-hover:text-white transition-colors" />
-                </div>
-              </Link>
-            </Button>
-          </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Button asChild className="rounded-full pl-6 pr-2 py-5 gap-3 text-sm md:text-base bg-gradient-to-r from-biznorx-red to-biznorx-deep-red hover:opacity-90 h-11 md:h-12 border-0 w-full sm:w-auto cursor-pointer">
+            <Link href="/contact">
+              Hire Talent
+              <div className="bg-white/20 rounded-full p-1 md:p-1.5 flex items-center justify-center">
+                <ArrowRight className="w-4 h-4 text-white" />
+              </div>
+            </Link>
+          </Button>
+          <Button asChild variant="outline" className="group rounded-full pl-6 pr-2 py-5 gap-3 text-sm md:text-base border-2 border-biznorx-navy text-biznorx-navy hover:bg-biznorx-navy hover:text-white transition-colors h-11 md:h-12 w-full sm:w-auto cursor-pointer">
+            <Link href="/careers">
+              Find Jobs
+              <div className="bg-biznorx-navy/10 rounded-full p-1 md:p-1.5 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                <ArrowRight className="w-4 h-4 text-biznorx-navy group-hover:text-white transition-colors" />
+              </div>
+            </Link>
+          </Button>
         </div>
+      </div>
+
+      {/* The 3D Canvas pulled up to eliminate visual white space */}
+      <div className="fb-image-container container-master relative z-10 w-full -mt-4 md:-mt-12">
         <div className="fb-box">
           <div className="fb-images">
             <div
