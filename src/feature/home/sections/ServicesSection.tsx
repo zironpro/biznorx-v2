@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function ServicesSection() {
   const [active, setActive] = useState<'employer' | 'candidate' | null>(null);
@@ -52,9 +53,11 @@ export function ServicesSection() {
             ))}
           </ul>
 
-          <Button className="w-fit rounded-full bg-white text-biznorx-navy hover:bg-neutral-100 h-12 px-8 gap-3 group/btn">
-            Build Your Team
-            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+          <Button asChild className="w-fit rounded-full bg-white text-biznorx-navy hover:bg-neutral-100 h-12 px-8 gap-3 group/btn cursor-pointer">
+            <Link href="/contact">
+              Build Your Team
+              <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+            </Link>
           </Button>
         </div>
       </div>
@@ -87,9 +90,11 @@ export function ServicesSection() {
             ))}
           </ul>
 
-          <Button className="w-fit rounded-full bg-gradient-to-r from-biznorx-deep-red to-biznorx-red text-white hover:opacity-90 border-0 h-12 px-8 gap-3 group/btn">
-            Discover Roles
-            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+          <Button asChild className="w-fit rounded-full bg-gradient-to-r from-biznorx-deep-red to-biznorx-red text-white hover:opacity-90 border-0 h-12 px-8 gap-3 group/btn cursor-pointer">
+            <Link href="/careers">
+              Discover Roles
+              <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+            </Link>
           </Button>
         </div>
       </div>

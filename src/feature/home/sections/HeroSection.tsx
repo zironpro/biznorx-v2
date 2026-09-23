@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { useEffect, useState } from "react"
+import Link from "next/link"
 
 export function HeroSection() {
   const portraits = [
@@ -58,24 +59,28 @@ export function HeroSection() {
         
         {/* CTA */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button className="rounded-full pl-6 pr-2 py-5 gap-3 text-sm md:text-base bg-gradient-to-r from-biznorx-red to-biznorx-deep-red hover:opacity-90 h-11 md:h-12 z-20 relative border-0 w-full sm:w-auto">
-            Hire Talent
-            <div className="bg-white/20 rounded-full p-1 md:p-1.5 flex items-center justify-center">
-              <ArrowRight className="w-4 h-4 text-white" />
-            </div>
+          <Button asChild className="rounded-full pl-6 pr-2 py-5 gap-3 text-sm md:text-base bg-gradient-to-r from-biznorx-red to-biznorx-deep-red hover:opacity-90 h-11 md:h-12 z-20 relative border-0 w-full sm:w-auto cursor-pointer">
+            <Link href="/contact">
+              Hire Talent
+              <div className="bg-white/20 rounded-full p-1 md:p-1.5 flex items-center justify-center">
+                <ArrowRight className="w-4 h-4 text-white" />
+              </div>
+            </Link>
           </Button>
-          <Button variant="outline" className="group rounded-full pl-6 pr-2 py-5 gap-3 text-sm md:text-base border-2 border-biznorx-navy text-biznorx-navy hover:bg-biznorx-navy hover:text-white transition-colors h-11 md:h-12 z-20 relative w-full sm:w-auto">
-            Find Jobs
-            <div className="bg-biznorx-navy/10 rounded-full p-1 md:p-1.5 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-              <ArrowRight className="w-4 h-4 text-biznorx-navy group-hover:text-white transition-colors" />
-            </div>
+          <Button asChild variant="outline" className="group rounded-full pl-6 pr-2 py-5 gap-3 text-sm md:text-base border-2 border-biznorx-navy text-biznorx-navy hover:bg-biznorx-navy hover:text-white transition-colors h-11 md:h-12 z-20 relative w-full sm:w-auto cursor-pointer">
+            <Link href="/careers">
+              Find Jobs
+              <div className="bg-biznorx-navy/10 rounded-full p-1 md:p-1.5 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                <ArrowRight className="w-4 h-4 text-biznorx-navy group-hover:text-white transition-colors" />
+              </div>
+            </Link>
           </Button>
         </div>
       </div>
 
       {/* Curved Images Layout */}
       <div 
-        className="w-full max-w-[1000px] mx-auto flex justify-center items-center h-[300px] md:h-[460px] relative mb-12 md:mb-16 -mt-8 md:-mt-16"
+        className="w-full max-w-[1000px] mx-auto flex justify-center items-center h-[300px] md:h-[460px] relative mb-12 md:mb-16 -mt-8 md:-mt-8 md:mt-16"
         style={{ perspective: '800px' }}
       >
         {portraits.map((src, i) => {

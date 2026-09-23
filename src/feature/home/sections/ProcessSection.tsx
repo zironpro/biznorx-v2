@@ -1,6 +1,7 @@
 import { Search, Network, CheckSquare, Rocket, Star, ArrowRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function ProcessSection() {
   const steps = [
@@ -31,7 +32,7 @@ export function ProcessSection() {
   ];
 
   return (
-    <section className="w-full bg-white py-24 md:py-32 border-t border-neutral-100">
+    <section className="w-full bg-white py-12 md:py-32 border-t border-neutral-100">
       <div className="container-master">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
           
@@ -88,11 +89,13 @@ export function ProcessSection() {
             </p>
 
             <div className="flex items-center gap-6 mb-12">
-              <Button className="rounded-full bg-gradient-to-r from-biznorx-deep-red to-biznorx-red hover:opacity-90 text-white px-8 h-12 gap-3 group border-0 shadow-md">
-                Start Hiring
-                <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                  <ArrowRight className="w-4 h-4" />
-                </div>
+              <Button asChild className="rounded-full bg-gradient-to-r from-biznorx-deep-red to-biznorx-red hover:opacity-90 text-white px-8 h-12 gap-3 group border-0 shadow-md cursor-pointer">
+                <Link href="/contact">
+                  Start Hiring
+                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </Link>
               </Button>
               
               <div className="flex items-center gap-3">

@@ -35,9 +35,9 @@ export function FaqSection() {
   };
 
   return (
-    <section className="w-full bg-neutral-50 py-24 md:py-32 border-t border-neutral-100">
+    <section className="w-full bg-neutral-50 py-12 md:py-32 border-t border-neutral-100">
       <div className="container-master">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-16 lg:gap-24">
           
           {/* Left Column - Header */}
           <div className="w-full lg:w-1/3">
