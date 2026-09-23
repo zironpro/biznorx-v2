@@ -1,6 +1,7 @@
 "use client"
 
 import { Search, Map, Rocket } from "lucide-react"
+import { motion } from "framer-motion"
 
 export function DigitalProcess() {
   const steps = [
@@ -45,15 +46,50 @@ export function DigitalProcess() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 relative">
           {/* Connecting Line (Desktop only) */}
-          <div className="hidden md:block absolute top-[4.5rem] left-[15%] right-[15%] h-px bg-neutral-200 z-0"></div>
+          <div 
+            className="hidden md:block absolute top-[2.5rem] left-[15%] right-[15%] h-1 z-0"
+            style={{
+              backgroundImage: 'radial-gradient(circle, #d4d4d8 2px, transparent 2px)',
+              backgroundSize: '24px 4px',
+              backgroundPosition: 'left center',
+              backgroundRepeat: 'repeat-x'
+            }}
+          >
+            <motion.div 
+              className="absolute top-0 left-0 h-full z-10"
+              initial={{ width: "0%" }}
+              whileInView={{ width: "100%" }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 2, ease: "easeOut" }}
+              style={{
+                backgroundImage: 'radial-gradient(circle, #ea0000 2.5px, transparent 2.5px)',
+                backgroundSize: '24px 4px',
+                backgroundPosition: 'left center',
+                backgroundRepeat: 'repeat-x'
+              }}
+            />
+          </div>
 
           {steps.map((step, i) => {
             const Icon = step.icon
             return (
               <div key={i} className="relative z-10 flex flex-col items-center text-center group">
-                <div className="w-20 h-20 bg-white rounded-full border-4 border-neutral-50 shadow-sm flex items-center justify-center mb-6 group-hover:border-biznorx-red/20 group-hover:shadow-md transition-all duration-300">
-                  <Icon className="w-8 h-8 text-biznorx-navy group-hover:text-biznorx-red transition-colors duration-300" strokeWidth={1.5} />
-                </div>
+                <motion.div 
+                  initial={{ backgroundColor: "#ffffff", borderColor: "#fafafa" }}
+                  whileInView={{ backgroundColor: "#ea0000", borderColor: "#fecaca" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.4, delay: i * 1.0 }}
+                  className="w-20 h-20 rounded-full border-4 shadow-sm flex items-center justify-center mb-6 group-hover:shadow-md transition-shadow duration-300"
+                >
+                  <motion.div
+                    initial={{ color: "#0b1221" }}
+                    whileInView={{ color: "#ffffff" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.4, delay: i * 1.0 }}
+                  >
+                    <Icon className="w-8 h-8" strokeWidth={1.5} />
+                  </motion.div>
+                </motion.div>
                 
                 <span className="text-xs font-bold text-slate-300 mb-3">{step.id}</span>
                 <h3 className="text-2xl font-bold text-biznorx-navy mb-1">{step.title}</h3>
