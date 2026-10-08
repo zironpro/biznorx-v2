@@ -31,7 +31,8 @@ export function WhyChooseUsSection() {
 
         {/* Left Column */}
         <div className="w-full lg:w-3/12 flex flex-col">
-          <h2 className="text-4xl md:text-5xl font-[family-name:var(--font-playfair)] text-biznorx-navy tracking-tight leading-none mb-12">
+          <span className="block font-bold text-sm tracking-widest uppercase text-biznorx-red mb-4">Why Choose Us</span>
+          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl text-biznorx-navy tracking-tight leading-tight mb-12">
             The Architecture of<br />Institutional Trust
           </h2>
 

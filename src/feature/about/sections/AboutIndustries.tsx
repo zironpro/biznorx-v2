@@ -59,8 +59,9 @@ export function AboutIndustries() {
   return (
     <section className="w-full bg-[#f8f6f6] py-12 md:py-12 md:py-20 relative overflow-hidden">
       <div className="container-master px-4 max-w-7xl mx-auto">
-        <div className="flex flex-col mb-8 md:mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-biznorx-navy tracking-tighter">
+        <div className="w-full text-center md:text-left mb-8 md:mb-16">
+          <span className="block font-bold text-sm tracking-widest uppercase text-biznorx-red mb-4">Our Focus</span>
+          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl text-biznorx-navy tracking-tight leading-tight">
             Industries We Serve
           </h2>
         </div>

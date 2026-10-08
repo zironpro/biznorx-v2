@@ -59,7 +59,7 @@ export function BlogHomeSection() {
             return (
               <article
                 key={p.id}
-                className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group overflow-hidden relative"
+                className="bg-white rounded-lg border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group overflow-hidden relative"
               >
                 <Link href={p.href} className="absolute inset-0 z-20"></Link>
 

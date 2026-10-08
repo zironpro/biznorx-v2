@@ -27,11 +27,9 @@ export function OurValuesSection() {
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
 
       <div className="container-master px-4 relative z-10">
-        <div className="text-center mb-8 md:mb-16 md:mb-12 md:mb-24">
-          <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-biznorx-red mb-4">
-            Our Core Pillars
-          </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-playfair)] text-white tracking-tight">
+        <div className="w-full text-center mb-16 relative z-20">
+          <span className="block font-bold text-sm tracking-widest uppercase text-biznorx-red mb-4">Our Core Pillars</span>
+          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight text-white">
             Values that define us.
           </h2>
         </div>

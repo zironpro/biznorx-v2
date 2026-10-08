@@ -29,14 +29,12 @@ export function WhatDrivesUs() {
       <div className="container-master px-4 max-w-6xl mx-auto relative z-10">
 
         {/* Header */}
-        <div className="flex flex-col items-center text-center mb-10 md:mb-20">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-neutral-200/50 text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-500 mb-6">
-            Our Core Principles
-          </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-biznorx-navy tracking-tight mb-4">
+        <div className="w-full text-center mb-10 md:mb-16">
+          <span className="block font-bold text-sm tracking-widest uppercase text-biznorx-red mb-4">Our Core Principles</span>
+          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl text-biznorx-navy tracking-tight leading-tight mb-4">
             What Drives Us
           </h2>
-          <p className="text-slate-600 font-medium max-w-xl mx-auto text-sm md:text-base">
+          <p className="text-slate-600 font-medium max-w-xl mx-auto text-base md:text-lg">
             The foundational elements that power our approach to global recruitment and workforce management.
           </p>
         </div>
