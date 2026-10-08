@@ -12,27 +12,22 @@ export function HeroSection() {
       style={{ minHeight: "calc(100dvh - 72px)" }}
     >
       {/* Background Videos */}
-      <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
-        {/* Desktop Video */}
+      <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden bg-black">
         <video 
           autoPlay 
           loop 
           muted 
           playsInline 
-          className="hidden md:block absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto max-w-none -translate-x-1/2 -translate-y-1/2 object-cover pointer-events-none"
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto max-w-none -translate-x-1/2 -translate-y-1/2 object-cover pointer-events-none"
         >
+          {/* Desktop Video (loads when screen is >= 768px) */}
+          <source src="/video/biznorx-hero.webm" type="video/webm" media="(min-width: 768px)" />
+          
+          {/* Mobile Video (loads when screen is < 768px) */}
+          <source src="/video/mobile-video.webm" type="video/webm" media="(max-width: 767px)" />
+          
+          {/* Fallback if media queries fail, default to desktop */}
           <source src="/video/biznorx-hero.webm" type="video/webm" />
-        </video>
-        
-        {/* Mobile Video */}
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          className="block md:hidden absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto max-w-none -translate-x-1/2 -translate-y-1/2 object-cover pointer-events-none"
-        >
-          <source src="/video/mobile-video.webm" type="video/webm" />
         </video>
         
         <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div>
