@@ -111,7 +111,7 @@ export function ServicesSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="w-full lg:w-[40%] rounded-lg overflow-hidden relative min-h-[400px] lg:min-h-full flex shadow-sm bg-gray-100"
           >
-            <AnimatePresence mode="wait">
+            <AnimatePresence>
               <motion.div
                 key={currentImageIndex}
                 initial={{ opacity: 0, scale: 1.05 }}
