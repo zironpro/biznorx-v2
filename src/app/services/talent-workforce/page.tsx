@@ -19,7 +19,7 @@ export default function TalentWorkforcePage() {
         subtitle="The right people can change the trajectory of a business."
         description="BiznorX connects ambitious professionals with industry-leading organizations. We don't just fill seats; we strategically align talent with long-term company visions."
         offers={offers}
-        bgImage="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+        bgImage="/images/services/talent_workforce.jpg"
       />
     </main>
   );

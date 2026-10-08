@@ -17,7 +17,7 @@ export default function BusinessGrowthPage() {
         subtitle="Consulting, market entry, strategic partnerships and growth solutions."
         description="Growth is not accidental; it is engineered. BiznorX provides the strategic oversight and operational frameworks required to take your business to its next stage of evolution."
         offers={offers}
-        bgImage="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+        bgImage="/images/services/business_growth.jpg"
       />
     </main>
   );

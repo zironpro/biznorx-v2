@@ -1,8 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, CheckCircle2 } from "lucide-react"
+import { ArrowRight, CheckCircle2, Settings } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
 import { GlobalCta } from "@/components/GlobalCta"
 import { ProcessSection } from "@/feature/home/sections/ProcessSection"
 
@@ -19,31 +21,68 @@ interface VerticalViewProps {
   bgImage?: string;
 }
 
-export function VerticalView({ title, subtitle, description, offers, bgImage = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" }: VerticalViewProps) {
+export function VerticalView({ title, subtitle, description, offers, bgImage = "/images/process_1.jpg" }: VerticalViewProps) {
+  
+  // A helper to split the title for the gradient effect
+  const titleParts = title.split(' ');
+  const firstPart = titleParts[0];
+  const restPart = titleParts.slice(1).join(' ');
+
   return (
     <div className="flex flex-col w-full">
-      {/* Hero Section */}
-      <section className="w-full bg-black text-white pt-32 pb-24 md:pt-40 md:pb-32 relative overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay"
-          style={{ backgroundImage: `url('${bgImage}')` }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black"></div>
+      
+      {/* Split Hero Section (Matches ServicesHero) */}
+      <section className="w-full min-h-[85vh] bg-neutral-50 flex flex-col lg:flex-row border-b border-neutral-100">
+        
+        {/* Left Text Side */}
+        <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-24 lg:py-0 relative z-10">
+          <div className="flex items-center gap-2 text-xs md:text-sm font-bold uppercase tracking-widest text-slate-400 mb-6 overflow-hidden text-ellipsis whitespace-nowrap">
+            <Link href="/" className="hover:text-biznorx-red transition-colors shrink-0">Home</Link>
+            <span className="text-slate-300 shrink-0">/</span>
+            <Link href="/services" className="hover:text-biznorx-red transition-colors shrink-0">Services</Link>
+            <span className="text-slate-300 shrink-0">/</span>
+            <span className="text-biznorx-red truncate">{title}</span>
+          </div>
 
-        <div className="container-master relative z-10 text-center max-w-4xl mx-auto px-4">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="text-white/60 uppercase tracking-[0.2em] text-sm font-bold mb-6 block">Business Vertical</span>
-            <h1 className="font-[family-name:var(--font-playfair)] text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight mb-8">
-              {title}
-            </h1>
-            <p className="text-gray-300 text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto font-medium">
-              {subtitle}
-            </p>
-          </motion.div>
+          <h1 className="flex flex-col gap-2 mb-8">
+            <span className="font-[family-name:var(--font-playfair)] text-5xl md:text-6xl lg:text-7xl text-biznorx-navy tracking-tight leading-none">
+              {firstPart}
+            </span>
+            {restPart && (
+              <span className="font-bold text-5xl md:text-6xl lg:text-7xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-biznorx-deep-red to-biznorx-red pb-2 leading-none">
+                {restPart}
+              </span>
+            )}
+          </h1>
+
+          <p className="text-base md:text-lg text-slate-600 max-w-lg mb-10 font-medium leading-relaxed">
+            {subtitle}
+          </p>
+
+          <Button asChild className="w-fit rounded-full bg-biznorx-navy text-white hover:bg-slate-800 transition-colors h-12 px-8 gap-3 group cursor-pointer">
+            <Link href="/contact">
+              Initiate Consultation
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </Button>
+        </div>
+
+        {/* Right Image Side */}
+        <div className="w-full lg:w-1/2 relative h-[50vh] lg:h-auto overflow-hidden bg-biznorx-navy">
+          <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-transparent to-neutral-50/20 z-10"></div>
+          {/* Next Image requires exact paths or domains. bgImage is passed as string */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center hover:scale-105 transition-transform duration-[20s] ease-linear"
+            style={{ backgroundImage: `url('${bgImage}')` }}
+          ></div>
+
+          {/* Floating Stat Badge */}
+          <div className="absolute bottom-12 right-12 md:bottom-24 md:right-24 z-20 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl text-white shadow-2xl">
+            <div className="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
+              360°
+            </div>
+            <p className="text-sm font-bold uppercase tracking-widest text-white/80">Support</p>
+          </div>
         </div>
       </section>
 
@@ -56,39 +95,56 @@ export function VerticalView({ title, subtitle, description, offers, bgImage = "
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="w-full bg-neutral-50 py-24 md:py-32">
-        <div className="container-master max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl text-black tracking-tight mb-4">
+      {/* Services List (What We Offer) */}
+      <section className="w-full bg-white py-24 md:py-32">
+        <div className="container-master max-w-7xl mx-auto px-4">
+          
+          <div className="flex flex-col lg:flex-row lg:items-start justify-between mb-16 md:mb-20 gap-8">
+            <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl text-biznorx-navy tracking-tight mb-4">
               What We Offer
             </h2>
+            <p className="text-gray-500 max-w-sm lg:mt-4 text-sm leading-relaxed">
+              Tailored solutions designed to elevate your business operations and drive sustainable growth across every vertical.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="flex flex-col w-full border-t border-neutral-200/60">
             {offers.map((offer, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-white p-8 md:p-10 rounded-[2rem] border border-neutral-100 shadow-sm hover:shadow-md transition-shadow group"
+              <div 
+                key={index} 
+                className="flex flex-col lg:flex-row py-12 md:py-16 border-b border-neutral-200/60 gap-8 lg:gap-16 group"
               >
-                <div className="flex items-start gap-4">
-                  <CheckCircle2 className="w-6 h-6 text-black shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-bold text-xl md:text-2xl text-black mb-3">{offer.title}</h3>
-                    {offer.description && (
-                      <p className="text-gray-500 leading-relaxed text-sm md:text-base">
-                        {offer.description}
-                      </p>
-                    )}
+                
+                {/* Left Column: Title */}
+                <div className="w-full lg:w-5/12 flex flex-col">
+                  <div className="flex items-center gap-4">
+                    <span className="text-sm font-bold text-neutral-300 group-hover:text-biznorx-red transition-colors duration-300">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <h3 className="text-2xl md:text-3xl font-bold text-biznorx-navy tracking-tight group-hover:translate-x-2 transition-transform duration-300">
+                      {offer.title}
+                    </h3>
                   </div>
                 </div>
-              </motion.div>
+
+                {/* Right Column: Description & Link */}
+                <div className="w-full lg:w-7/12 flex flex-col justify-center">
+                  {offer.description && (
+                    <p className="text-slate-600 leading-relaxed font-medium mb-8 max-w-2xl">
+                      {offer.description}
+                    </p>
+                  )}
+                  
+                  <Link href="/contact" className="w-fit flex items-center text-biznorx-red font-bold text-xs tracking-wider uppercase cursor-pointer hover:opacity-80 transition-opacity">
+                    Inquire Now 
+                    <ArrowRight className="w-3 h-3 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
+                  </Link>
+                </div>
+
+              </div>
             ))}
           </div>
+
         </div>
       </section>
 

@@ -21,7 +21,7 @@ export default function RealEstateLandPage() {
         subtitle="From land discovery to successful transactions."
         description="Navigating the real estate market requires local expertise and global foresight. BiznorX provides comprehensive property and land solutions for investors, businesses, and individuals."
         offers={offers}
-        bgImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+        bgImage="/images/services/real_estate.jpg"
       />
     </main>
   );

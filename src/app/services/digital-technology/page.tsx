@@ -18,7 +18,7 @@ export default function DigitalTechnologyPage() {
         subtitle="Digital infrastructure for businesses ready to move forward."
         description="In a digital-first world, your technology stack defines your scalability. We build, market, and automate digital experiences that drive measurable business outcomes."
         offers={offers}
-        bgImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+        bgImage="/images/services/digital_technology.jpg"
       />
     </main>
   );

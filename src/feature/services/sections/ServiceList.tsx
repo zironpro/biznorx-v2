@@ -8,82 +8,62 @@ import Image from "next/image"
 const services = [
   { 
     id: "01", 
-    title: "Executive Recruitment", 
-    subtitle: "Sourcing top-tier leadership to guide your organization.",
-    desc: "Great leadership is key to any company strategy. Our team sources high-quality, experienced executives that drive growth and navigate complex business challenges.", 
+    slug: "talent-workforce",
+    title: "Talent & Workforce", 
+    subtitle: "Connecting the right people with the right opportunities.",
+    desc: "Global recruitment, manpower, staffing and end-to-end workforce solutions. Whether you're looking to build your team from the ground up or refine your existing workforce strategy, we offer full-scale support.", 
     features: [
-      "C-Suite placements", 
-      "Board member sourcing", 
-      "Leadership assessment", 
-      "Succession planning"
+      "Executive Recruitment", 
+      "Bulk Recruitment", 
+      "EOR Services", 
+      "Blue Collar Hiring",
+      "Global Placement"
     ],
-    image: "/images/services/executive-recruitment.webp",
+    image: "/images/services/talent_workforce.jpg",
   },
   { 
     id: "02", 
-    title: "Bulk Recruitment",      
-    subtitle: "Maximizing reach with targeted volume hiring.",
-    desc: "Reach your workforce goals wherever they are. From seasonal hiring to facility expansions, our bulk campaigns are designed to scale and build strong operational teams.", 
+    slug: "real-estate-land",
+    title: "Real Estate & Land",      
+    subtitle: "From land opportunities to lasting value.",
+    desc: "Prime land brokerage, property sourcing, and comprehensive real estate advisory. We help you secure the best locations and properties for your business operations and expansions.", 
     features: [
-      "Mass hiring campaigns", 
-      "Rapid onboarding", 
-      "Volume screening", 
-      "Performance tracking"
+      "Land Brokerage", 
+      "Property Sales", 
+      "Investment Advisory", 
+      "Property Sourcing"
     ],
-    image: "/images/services/bulk-recruitment.webp",
+    image: "/images/services/real_estate.jpg",
   },
   { 
     id: "03", 
-    title: "EOR Services",          
-    subtitle: "Creating impactful teams globally with full compliance.",
-    desc: "From payroll to compliance, we ensure seamless global team management. Whether it's a new market entry or remote hires, we handle it all to deliver a smooth experience.", 
+    slug: "digital-technology",
+    title: "Digital & Technology",          
+    subtitle: "Digital infrastructure for businesses ready to move forward.",
+    desc: "High-performance applications, digital transformation, and intelligent technology solutions. We provide the solid technical foundation necessary for scalable modern growth.", 
     features: [
-      "Global payroll management", 
-      "Local legal compliance", 
-      "Benefits administration", 
-      "Contract management"
+      "Web Development", 
+      "App Development", 
+      "Digital Marketing", 
+      "Branding",
+      "Technical Consulting"
     ],
-    image: "/images/services/eor-services.webp",
+    image: "/images/services/digital_technology.jpg",
   },
   { 
     id: "04", 
-    title: "Blue Collar Hiring",    
-    subtitle: "Driving operational excellence and generating output.",
-    desc: "Powerful operational teams are essential for growth. Our team sources and manages skilled workers that build your facilities and generate valuable output across sectors.", 
+    slug: "business-growth",
+    title: "Business & Growth",    
+    subtitle: "Strategic solutions for sustainable growth.",
+    desc: "Strategic business consulting, market entry planning, and global growth partnerships. We help you navigate complex new markets with expert advisory and hands-on guidance.", 
     features: [
-      "Skilled trades sourcing", 
-      "Safety compliance checks", 
-      "Shift management", 
-      "Performance analytics"
+      "Consulting & Strategy", 
+      "Partnerships", 
+      "Market Entry",
+      "Performance Analytics"
     ],
-    image: "/images/services/blue-collar-hiring.webp",
-  },
-  { 
-    id: "05", 
-    title: "Global Placement",      
-    subtitle: "Connecting talent without borders for maximum impact.",
-    desc: "Expand your horizons with international talent. We handle the complexities of cross-border recruitment, ensuring smooth transitions and absolute legal compliance.", 
-    features: [
-      "Visa & immigration support", 
-      "Relocation assistance", 
-      "Cultural orientation", 
-      "International sourcing"
-    ],
-    image: "/images/services/global-placement.webp",
-  },
-  { 
-    id: "06", 
-    title: "Technical Consulting",  
-    subtitle: "Innovating for the future with strategic insights.",
-    desc: "Leverage our deep industry insights to solve complex challenges. We provide strategic consulting that blends technical expertise with precise business acumen.", 
-    features: [
-      "Digital transformation", 
-      "Process optimization", 
-      "Tech stack assessment", 
-      "Innovation strategy"
-    ],
-    image: "/images/services/Technical Consulting.webp",
-  },
+    image: "/images/services/business_growth.jpg",
+  }
 ]
 
 export function ServiceList() {
@@ -130,8 +110,8 @@ export function ServiceList() {
                 </p>
 
                 <Button asChild className="w-fit rounded-full bg-biznorx-navy text-white hover:bg-biznorx-navy/90 transition-colors h-12 px-6 gap-3 group cursor-pointer">
-                  <Link href="/contact">
-                    Get In Touch
+                  <Link href={`/services/${service.slug}`}>
+                    Detail View
                     <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white transition-colors">
                       <ArrowRight className="w-3 h-3 text-white group-hover:text-biznorx-navy transition-colors" />
                     </div>
