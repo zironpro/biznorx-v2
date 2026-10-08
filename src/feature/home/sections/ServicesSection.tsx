@@ -1,104 +1,132 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { ArrowRight, Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Globe, Building2, MonitorSmartphone, TrendingUp, ArrowRight } from "lucide-react"
+import Link from "next/link"
+import Image from "next/image"
+import { motion } from "framer-motion"
 
 export function ServicesSection() {
-  const [active, setActive] = useState<'employer' | 'candidate' | null>(null);
+  const leftVerticals = [
+    {
+      icon: Globe,
+      title: "Talent & Workforce",
+      desc: "Global recruitment, manpower, staffing and end-to-end workforce solutions.",
+      link: "/services/talent-workforce",
+    },
+    {
+      icon: Building2,
+      title: "Real Estate & Land",
+      desc: "Prime land brokerage, property sourcing, and comprehensive real estate advisory.",
+      link: "/services/real-estate-land",
+    },
+  ]
 
-  const employerFeatures = [
-    "Access to exclusive passive candidate networks",
-    "Rigorous technical and behavioral screening",
-    "Dedicated account managers & hiring strategy",
-    "40% average reduction in time-to-hire",
-  ];
-
-  const candidateFeatures = [
-    "Unlisted and highly exclusive job opportunities",
-    "Expert resume and portfolio optimization",
-    "1-on-1 interview preparation and coaching",
-    "Salary negotiation and career mapping",
-  ];
+  const rightVerticals = [
+    {
+      icon: MonitorSmartphone,
+      title: "Digital & Technology",
+      desc: "High-performance applications, digital transformation, and intelligent technology solutions.",
+      link: "/services/digital-technology",
+    },
+    {
+      icon: TrendingUp,
+      title: "Business & Growth",
+      desc: "Strategic business consulting, market entry planning, and global growth partnerships.",
+      link: "/services/business-growth",
+    },
+  ]
 
   return (
-    <section className="w-full min-h-[900px] lg:min-h-[600px] lg:h-[80vh] flex flex-col lg:flex-row overflow-hidden border-t border-neutral-100">
-      
-      {/* Employer Panel */}
-      <div 
-        onMouseEnter={() => setActive('employer')}
-        onMouseLeave={() => setActive(null)}
-        className={`relative flex flex-col justify-center p-8 md:p-12 lg:p-24 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] ${
-          active === 'employer' ? 'lg:w-[65%]' : active === 'candidate' ? 'lg:w-[35%]' : 'lg:w-[50%]'
-        } bg-biznorx-navy text-white overflow-hidden group cursor-pointer`}
-      >
-        <div className={`relative z-10 w-full max-w-xl mx-auto flex flex-col transition-all duration-500 ${
-          active === 'candidate' ? 'lg:opacity-0 lg:translate-x-[-20px] pointer-events-none' : 'opacity-100 translate-x-0'
-        }`}>
-          <h2 className="font-[family-name:var(--font-playfair)] text-5xl lg:text-7xl mb-6 tracking-tight leading-none">
-            For<br/>Employers
+    <section className="w-full bg-white text-biznorx-navy py-24 lg:py-32 overflow-hidden border-t border-neutral-100">
+      <div className="container-master max-w-7xl mx-auto px-4">
+        
+        {/* Header */}
+        <div className="flex flex-col items-center text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight mb-6 text-biznorx-navy">
+            Core verticals that set us <br className="hidden md:block" /> apart from the competition
           </h2>
-          
-          <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-md">
-            We don't just fill seats. We source, vet, and secure top-tier professionals who perfectly align with your company's culture and long-term vision.
+          <p className="text-gray-500 text-base md:text-lg">
+            Explore our standout business sectors designed to deliver exceptional performance and value, distinguishing us as a unified global partner.
           </p>
+        </div>
 
-          <ul className="space-y-4 mb-12">
-            {employerFeatures.map((f, i) => (
-              <li key={i} className="flex items-center gap-4">
-                <Check className="w-5 h-5 text-biznorx-red shrink-0" />
-                <span className="text-white/90 font-medium">{f}</span>
-              </li>
-            ))}
-          </ul>
+        {/* 3 Column Layout */}
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch justify-center h-full">
+          
+          {/* Left Column - 2 Cards */}
+          <div className="flex flex-col gap-6 lg:gap-8 w-full lg:w-[30%]">
+            {leftVerticals.map((v, i) => {
+              const Icon = v.icon;
+              return (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="flex-1 flex flex-col p-8 rounded-[2rem] bg-[#F4F4F4] hover:shadow-lg transition-shadow group relative overflow-hidden h-full"
+                >
+                  <Link href={v.link} className="absolute inset-0 z-10"></Link>
+                  <div className="w-12 h-12 rounded-xl bg-biznorx-navy flex items-center justify-center mb-10 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                    <Icon className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="mt-auto">
+                    <h3 className="font-bold text-lg text-biznorx-navy inline-block">{v.title}</h3>
+                    <span className="text-gray-600 text-base ml-1 leading-relaxed inline">
+                      {v.desc}
+                    </span>
+                  </div>
+                </motion.div>
+              )
+            })}
+          </div>
 
-          <Button asChild className="w-fit rounded-full bg-white text-biznorx-navy hover:bg-neutral-100 h-12 px-8 gap-3 group/btn cursor-pointer">
-            <Link href="/contact">
-              Build Your Team
-              <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-            </Link>
-          </Button>
+          {/* Center Column - Image */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-full lg:w-[40%] rounded-[2rem] overflow-hidden relative min-h-[400px] lg:min-h-full flex shadow-sm"
+          >
+            <Image 
+              src="/images/services-hero-woman.jpg" 
+              alt="Professional Businesswoman"
+              fill
+              className="object-cover object-center"
+            />
+          </motion.div>
+
+          {/* Right Column - 2 Cards */}
+          <div className="flex flex-col gap-6 lg:gap-8 w-full lg:w-[30%]">
+            {rightVerticals.map((v, i) => {
+              const Icon = v.icon;
+              return (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: (i * 0.1) + 0.3 }}
+                  className="flex-1 flex flex-col p-8 rounded-[2rem] bg-[#F4F4F4] hover:shadow-lg transition-shadow group relative overflow-hidden h-full"
+                >
+                  <Link href={v.link} className="absolute inset-0 z-10"></Link>
+                  <div className="w-12 h-12 rounded-xl bg-biznorx-navy flex items-center justify-center mb-10 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                    <Icon className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="mt-auto">
+                    <h3 className="font-bold text-lg text-biznorx-navy inline-block">{v.title}</h3>
+                    <span className="text-gray-600 text-base ml-1 leading-relaxed inline">
+                      {v.desc}
+                    </span>
+                  </div>
+                </motion.div>
+              )
+            })}
+          </div>
+
         </div>
       </div>
-
-      {/* Candidate Panel */}
-      <div 
-        onMouseEnter={() => setActive('candidate')}
-        onMouseLeave={() => setActive(null)}
-        className={`relative flex flex-col justify-center p-8 md:p-12 lg:p-24 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] ${
-          active === 'candidate' ? 'lg:w-[65%]' : active === 'employer' ? 'lg:w-[35%]' : 'lg:w-[50%]'
-        } bg-neutral-50 text-biznorx-navy overflow-hidden group cursor-pointer`}
-      >
-        <div className={`relative z-10 w-full max-w-xl mx-auto flex flex-col transition-all duration-500 ${
-          active === 'employer' ? 'lg:opacity-0 lg:translate-x-[20px] pointer-events-none' : 'opacity-100 translate-x-0'
-        }`}>
-          <h2 className="font-[family-name:var(--font-playfair)] text-5xl lg:text-7xl mb-6 tracking-tight leading-none">
-            For<br/>Job Seekers
-          </h2>
-          
-          <p className="text-slate-600 text-lg leading-relaxed mb-10 max-w-md">
-            Your next career leap shouldn't be left to chance. We connect ambitious professionals directly with unlisted, highly exclusive opportunities.
-          </p>
-
-          <ul className="space-y-4 mb-12">
-            {candidateFeatures.map((f, i) => (
-              <li key={i} className="flex items-center gap-4">
-                <Check className="w-5 h-5 text-biznorx-red shrink-0" />
-                <span className="text-biznorx-navy/80 font-medium">{f}</span>
-              </li>
-            ))}
-          </ul>
-
-          <Button asChild className="w-fit rounded-full bg-gradient-to-r from-biznorx-deep-red to-biznorx-red text-white hover:opacity-90 border-0 h-12 px-8 gap-3 group/btn cursor-pointer">
-            <Link href="/careers">
-              Discover Roles
-              <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-            </Link>
-          </Button>
-        </div>
-      </div>
-
     </section>
-  );
+  )
 }
