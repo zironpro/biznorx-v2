@@ -115,8 +115,8 @@ export function VerticalView({ title, subtitle, description, offers, bgImage = "
                 <span className="w-1.5 h-1.5 rounded-full bg-biznorx-red"></span>
                 Capabilities
               </p>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-playfair)] text-biznorx-navy tracking-tight leading-tight flex flex-col gap-2">
-                <span>Specialized</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl text-biznorx-navy tracking-tight leading-tight flex flex-col gap-2">
+                <span className="font-[family-name:var(--font-playfair)]">Specialized</span>
                 <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-biznorx-deep-red to-biznorx-red">
                   industry solutions.
                 </span>
