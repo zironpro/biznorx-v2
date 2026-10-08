@@ -1,11 +1,28 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { Globe, Building2, MonitorSmartphone, TrendingUp, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 
 export function ServicesSection() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  const carouselImages = [
+    "/images/services/business_growth.jpg",
+    "/images/services/digital_technology.jpg",
+    "/images/services/real_estate.jpg",
+    "/images/services/talent_workforce.jpg"
+  ]
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length)
+    }, 4000)
+    return () => clearInterval(timer)
+  }, [carouselImages.length])
+
   const leftVerticals = [
     {
       icon: Globe,
@@ -64,37 +81,53 @@ export function ServicesSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="flex-1 flex flex-col p-8 rounded-[2rem] bg-[#F4F4F4] hover:shadow-lg transition-shadow group relative overflow-hidden h-full"
+                  className="flex-1 flex flex-col p-8 rounded-lg bg-[#F4F4F4] hover:shadow-lg transition-shadow group relative overflow-hidden h-full"
                 >
                   <Link href={v.link} className="absolute inset-0 z-10"></Link>
                   <div className="w-12 h-12 rounded-xl bg-biznorx-navy flex items-center justify-center mb-10 group-hover:scale-110 transition-transform duration-300 relative z-20">
                     <Icon className="w-5 h-5 text-white" />
                   </div>
-                  <div className="mt-auto">
-                    <h3 className="font-bold text-lg text-biznorx-navy inline-block">{v.title}</h3>
-                    <span className="text-gray-600 text-base ml-1 leading-relaxed inline">
-                      {v.desc}
-                    </span>
+                  <div className="mt-auto flex flex-col items-start">
+                    <div>
+                      <h3 className="font-bold text-lg text-biznorx-navy inline-block">{v.title}</h3>
+                      <span className="text-gray-600 text-base ml-1 leading-relaxed inline">
+                        {v.desc}
+                      </span>
+                    </div>
+                    <div className="mt-6 flex items-center gap-2 text-biznorx-navy font-bold text-sm group-hover:text-biznorx-red transition-colors">
+                      Explore Details <ArrowRight className="w-4 h-4" />
+                    </div>
                   </div>
                 </motion.div>
               )
             })}
           </div>
 
-          {/* Center Column - Image */}
+          {/* Center Column - Image Carousel */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full lg:w-[40%] rounded-[2rem] overflow-hidden relative min-h-[400px] lg:min-h-full flex shadow-sm"
+            className="w-full lg:w-[40%] rounded-lg overflow-hidden relative min-h-[400px] lg:min-h-full flex shadow-sm bg-gray-100"
           >
-            <Image 
-              src="/images/services-hero-woman.jpg" 
-              alt="Professional Businesswoman"
-              fill
-              className="object-cover object-center"
-            />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentImageIndex}
+                initial={{ opacity: 0, scale: 1.05 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1 }}
+                className="absolute inset-0 w-full h-full"
+              >
+                <Image 
+                  src={carouselImages[currentImageIndex]} 
+                  alt="BiznorX Service Area"
+                  fill
+                  className="object-cover object-center"
+                />
+              </motion.div>
+            </AnimatePresence>
           </motion.div>
 
           {/* Right Column - 2 Cards */}
@@ -108,17 +141,22 @@ export function ServicesSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: (i * 0.1) + 0.3 }}
-                  className="flex-1 flex flex-col p-8 rounded-[2rem] bg-[#F4F4F4] hover:shadow-lg transition-shadow group relative overflow-hidden h-full"
+                  className="flex-1 flex flex-col p-8 rounded-lg bg-[#F4F4F4] hover:shadow-lg transition-shadow group relative overflow-hidden h-full"
                 >
                   <Link href={v.link} className="absolute inset-0 z-10"></Link>
                   <div className="w-12 h-12 rounded-xl bg-biznorx-navy flex items-center justify-center mb-10 group-hover:scale-110 transition-transform duration-300 relative z-20">
                     <Icon className="w-5 h-5 text-white" />
                   </div>
-                  <div className="mt-auto">
-                    <h3 className="font-bold text-lg text-biznorx-navy inline-block">{v.title}</h3>
-                    <span className="text-gray-600 text-base ml-1 leading-relaxed inline">
-                      {v.desc}
-                    </span>
+                  <div className="mt-auto flex flex-col items-start">
+                    <div>
+                      <h3 className="font-bold text-lg text-biznorx-navy inline-block">{v.title}</h3>
+                      <span className="text-gray-600 text-base ml-1 leading-relaxed inline">
+                        {v.desc}
+                      </span>
+                    </div>
+                    <div className="mt-6 flex items-center gap-2 text-biznorx-navy font-bold text-sm group-hover:text-biznorx-red transition-colors">
+                      Explore Details <ArrowRight className="w-4 h-4" />
+                    </div>
                   </div>
                 </motion.div>
               )

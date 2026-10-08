@@ -48,7 +48,7 @@ export function FaqSection() {
             <p className="text-slate-600 text-lg leading-relaxed mb-8">
               Everything you need to know about our recruiting methodology, timelines, and how we guarantee the perfect hire.
             </p>
-            <Button className="rounded-full bg-gradient-to-r from-biznorx-deep-red to-biznorx-red hover:opacity-90 text-white px-8 h-12 shadow-md">
+            <Button className="rounded-full bg-gradient-to-r from-biznorx-deep-red to-biznorx-red hover:opacity-90 text-white px-8 py-6 text-sm md:text-base h-12 md:h-14 font-bold shadow-md cursor-pointer transition-all">
               Contact Support
             </Button>
           </div>

@@ -42,7 +42,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto mb-8 font-medium leading-relaxed"
+          className="text-sm md:text-lg text-white/80 max-w-2xl mx-auto mb-8 font-medium leading-relaxed"
         >
           BiznorX brings together business solutions across talent, real estate, digital technology and growth — helping individuals and organizations move from opportunity to execution.
         </motion.p>
@@ -61,7 +61,7 @@ export function HeroSection() {
               </div>
             </Link>
           </Button>
-          <Button asChild variant="outline" className="group rounded-full pl-6 pr-2 py-6 gap-3 text-sm md:text-base border-2 border-white/20 text-white hover:bg-white/10 transition-colors h-12 md:h-14 w-full sm:w-auto cursor-pointer font-bold backdrop-blur-sm">
+          <Button asChild className="group rounded-full pl-6 pr-2 py-6 gap-3 text-sm md:text-base border-2 border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white transition-colors h-12 md:h-14 w-full sm:w-auto cursor-pointer font-bold backdrop-blur-sm">
             <Link href="/contact">
               Talk to BiznorX
               <div className="bg-white/10 rounded-full p-2 flex items-center justify-center group-hover:bg-white/20 transition-colors">

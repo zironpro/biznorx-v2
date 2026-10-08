@@ -29,7 +29,7 @@ export function StatsSection() {
         {/* Top Header Area */}
         <div className="px-6 md:px-12 lg:px-24 py-16 lg:py-24 border-b border-white/10 text-center md:text-left">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
-            <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-7xl text-white tracking-tight leading-tight max-w-3xl">
+            <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight mb-6 text-white">
               Built to Scale. <br className="hidden lg:block"/>Proven to Deliver.
             </h2>
             <p className="text-white/60 text-lg leading-relaxed max-w-md lg:pb-3">
