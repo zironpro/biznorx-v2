@@ -7,22 +7,38 @@ import { motion } from "framer-motion"
 
 export function HeroSection() {
   return (
-    <section className="relative w-full bg-black text-white flex flex-col items-center justify-center min-h-screen pt-20 pb-16 overflow-hidden">
-      {/* Abstract Background Animation */}
-      <div className="absolute inset-0 z-0">
+    <section 
+      className="relative w-full bg-black text-white flex flex-col items-center justify-center pt-10 md:pt-20 pb-16 overflow-hidden"
+      style={{ minHeight: "calc(100dvh - 72px)" }}
+    >
+      {/* Background Videos */}
+      <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
+        {/* Desktop Video */}
         <video 
           autoPlay 
           loop 
           muted 
           playsInline 
-          className="absolute inset-0 w-full h-full object-cover"
+          className="hidden md:block absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto max-w-none -translate-x-1/2 -translate-y-1/2 object-cover pointer-events-none"
         >
           <source src="/video/biznorx-hero.webm" type="video/webm" />
         </video>
-        <div className="absolute inset-0 bg-black/60"></div>
+        
+        {/* Mobile Video */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="block md:hidden absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto max-w-none -translate-x-1/2 -translate-y-1/2 object-cover pointer-events-none"
+        >
+          <source src="/video/mobile-video.webm" type="video/webm" />
+        </video>
+        
+        <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div>
       </div>
 
-      <div className="container-master relative z-10 flex flex-col items-center text-center max-w-5xl mx-auto px-4 mt-6 md:mt-12">
+      <div className="container-master relative z-10 flex flex-col items-center text-center max-w-5xl mx-auto px-4 -mt-24 md:-mt-0 md:mt-12">
 
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
