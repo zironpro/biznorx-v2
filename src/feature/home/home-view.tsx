@@ -6,6 +6,8 @@ import { StatsSection } from "./sections/StatsSection";
 import { EcosystemSection } from "./sections/EcosystemSection";
 import { GlobalSection } from "./sections/GlobalSection";
 import { IndustriesSection } from "./sections/IndustriesSection";
+
+import { FaqSection } from "./sections/FaqSection";
 import { CtaSection } from "./sections/CtaSection";
 
 export function HomeView() {
@@ -14,11 +16,12 @@ export function HomeView() {
       <HeroSection />
       <FeatureIconsSection />
       <ServicesSection />
-      <EcosystemSection />
+      {/* <EcosystemSection /> */}
       <GlobalSection />
       <IndustriesSection />
       <ProcessSection />
       <StatsSection />
+      <FaqSection />
       <CtaSection />
     </div>
   );

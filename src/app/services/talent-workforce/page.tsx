@@ -32,7 +32,7 @@ export default function TalentWorkforcePage() {
     <main className="flex min-h-screen flex-col w-full bg-white">
       <VerticalView 
         title="Talent & Workforce"
-        subtitle="The right people can change the trajectory of a business."
+        subtitle="The right people can change the trajectory of a business. We provide end-to-end workforce solutions—from executive search to large-scale staffing—ensuring you have the exact talent needed to execute your vision and drive sustainable corporate growth."
         description="BiznorX connects ambitious professionals with industry-leading organizations. We don't just fill seats; we strategically align talent with long-term company visions."
         offers={offers}
         bgImage="/images/services/talent_workforce.jpg"

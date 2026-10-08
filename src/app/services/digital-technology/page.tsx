@@ -31,10 +31,10 @@ export default function DigitalTechnologyPage() {
     <main className="flex min-h-screen flex-col w-full bg-white">
       <VerticalView 
         title="Digital & Technology"
-        subtitle="Digital infrastructure for businesses ready to move forward."
+        subtitle="Digital infrastructure for businesses ready to move forward. We build scalable applications, craft striking brand identities, and deploy data-driven marketing campaigns to turn your digital presence into your biggest competitive advantage."
         description="In a digital-first world, your technology stack defines your scalability. We build, market, and automate digital experiences that drive measurable business outcomes."
         offers={offers}
-        bgImage="/images/services/digital_technology.jpg"
+        bgImage="/images/digital.webp"
         stats={stats}
         reasons={reasons}
         quote={quote}

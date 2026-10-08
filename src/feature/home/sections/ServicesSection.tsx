@@ -11,7 +11,7 @@ export function ServicesSection() {
 
   const carouselImages = [
     "/images/services/business_growth.jpg",
-    "/images/services/digital_technology.jpg",
+    "/images/digital.webp",
     "/images/services/real_estate.jpg",
     "/images/services/talent_workforce.jpg"
   ]

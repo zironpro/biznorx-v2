@@ -6,24 +6,24 @@ import { Button } from "@/components/ui/button";
 
 const faqs = [
   {
-    question: "What industries do you specialize in?",
-    answer: "We specialize in placing top-tier talent across Technology, Finance, Healthcare, and Executive Leadership sectors. Our deep industry knowledge allows us to understand the nuanced requirements of these highly competitive markets."
+    question: "What services does BiznorX provide?",
+    answer: "BiznorX is a unified global partner offering comprehensive solutions across four core verticals: Talent & Workforce, Real Estate & Land, Digital & Technology, and Business & Growth. We help organizations scale from opportunity to execution."
   },
   {
-    question: "How long does your typical hiring process take?",
-    answer: "While timelines vary based on the role's complexity, our rigorous data-driven methodology typically reduces time-to-hire by 40%. On average, our clients see their first round of highly qualified candidates within 5 to 7 business days."
+    question: "Do you operate globally or regionally?",
+    answer: "We operate on a global scale, leveraging an extensive international network of experts and partners. This allows us to provide localized insights while executing global strategies across all our business verticals."
   },
   {
-    question: "Do you offer retained or contingency recruiting?",
-    answer: "We offer both retained and exclusive contingency search models, tailored to your specific hiring needs. For executive and highly specialized roles, we recommend our retained search to dedicate maximum resources to your placement."
+    question: "Can we engage BiznorX for multiple verticals at once?",
+    answer: "Absolutely. Our unique ecosystem is designed so that our services complement each other. Many of our clients utilize our technology solutions alongside our talent acquisition and business growth strategies for a cohesive expansion plan."
   },
   {
-    question: "How do you vet your candidates?",
-    answer: "Our vetting process is exhaustive. It includes deep behavioral interviewing, technical assessments (if applicable), comprehensive background and reference checks, and cultural alignment evaluations before you ever see a resume."
+    question: "How do you ensure quality across such diverse sectors?",
+    answer: "Each vertical is led by dedicated industry veterans who specialize deeply in their respective fields. We enforce a rigorous, data-driven methodology across the board, ensuring consistently high standards whether you are building software or acquiring real estate."
   },
   {
-    question: "What happens if a placement doesn't work out?",
-    answer: "We stand behind our placements with a comprehensive guarantee period. If a candidate leaves or is let go within this timeframe, we will conduct a replacement search at no additional cost to ensure your team remains strong."
+    question: "How do we get started with a project?",
+    answer: "You can begin by scheduling a consultation with our strategic advisory team. We will assess your current challenges, define your objectives, and architect a customized solution blueprint leveraging the right mix of our core verticals."
   }
 ];
 
@@ -40,13 +40,13 @@ export function FaqSection() {
         <div className="flex flex-col lg:flex-row gap-8 md:gap-16 lg:gap-24">
           
           {/* Left Column - Header */}
-          <div className="w-full lg:w-1/3">
+          <div className="w-full lg:w-1/3 lg:sticky lg:top-32 self-start">
             <span className="text-biznorx-red tracking-widest text-sm font-bold uppercase mb-4 block">FAQ</span>
             <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl text-biznorx-navy mb-6 tracking-tight leading-tight">
               Answers to your <br className="hidden lg:block"/>questions.
             </h2>
             <p className="text-slate-600 text-lg leading-relaxed mb-8">
-              Everything you need to know about our recruiting methodology, timelines, and how we guarantee the perfect hire.
+              Everything you need to know about our global ecosystem, cross-vertical solutions, and how we drive your business forward.
             </p>
             <Button className="rounded-full bg-gradient-to-r from-biznorx-deep-red to-biznorx-red hover:opacity-90 text-white px-8 py-6 text-sm md:text-base h-12 md:h-14 font-bold shadow-md cursor-pointer transition-all">
               Contact Support

@@ -34,7 +34,7 @@ export default function RealEstateLandPage() {
     <main className="flex min-h-screen flex-col w-full bg-white">
       <VerticalView 
         title="Real Estate & Land"
-        subtitle="From land discovery to successful transactions."
+        subtitle="From land discovery and acquisition to successful transactions. We navigate complex markets to secure high-value commercial properties, land parcels, and investment assets, providing end-to-end advisory and flawless execution."
         description="Navigating the real estate market requires local expertise and global foresight. BiznorX provides comprehensive property and land solutions for investors, businesses, and individuals."
         offers={offers}
         bgImage="/images/services/real_estate.jpg"

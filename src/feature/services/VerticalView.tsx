@@ -91,13 +91,7 @@ export function VerticalView({ title, subtitle, description, offers, bgImage = "
             style={{ backgroundImage: `url('${bgImage}')` }}
           ></div>
 
-          {/* Floating Stat Badge */}
-          <div className="absolute bottom-12 right-12 md:bottom-24 md:right-24 z-20 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl text-white shadow-2xl">
-            <div className="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
-              360°
-            </div>
-            <p className="text-sm font-bold uppercase tracking-widest text-white/80">Support</p>
-          </div>
+
         </div>
       </section>
 
@@ -123,7 +117,7 @@ export function VerticalView({ title, subtitle, description, offers, bgImage = "
               </p>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-playfair)] text-biznorx-navy tracking-tight leading-tight flex flex-col gap-2">
                 <span>Specialized</span>
-                <span className="font-[family-name:var(--font-inter)] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-biznorx-deep-red to-biznorx-red">
+                <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-biznorx-deep-red to-biznorx-red">
                   industry solutions.
                 </span>
               </h2>

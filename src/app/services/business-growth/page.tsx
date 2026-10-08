@@ -30,7 +30,7 @@ export default function BusinessGrowthPage() {
     <main className="flex min-h-screen flex-col w-full bg-white">
       <VerticalView 
         title="Business & Growth"
-        subtitle="Consulting, market entry, strategic partnerships and growth solutions."
+        subtitle="Consulting, market entry, strategic partnerships and comprehensive growth solutions. We provide the strategic oversight, operational frameworks, and deep market intelligence required to scale your business aggressively and securely."
         description="Growth is not accidental; it is engineered. BiznorX provides the strategic oversight and operational frameworks required to take your business to its next stage of evolution."
         offers={offers}
         bgImage="/images/services/business_growth.jpg"

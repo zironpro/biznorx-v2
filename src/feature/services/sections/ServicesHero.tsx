@@ -47,13 +47,7 @@ export function ServicesHero() {
           className="object-cover hover:scale-105 transition-transform duration-[20s] ease-linear"
         />
 
-        {/* Floating Stat Badge */}
-        <div className="absolute bottom-12 right-12 md:bottom-24 md:right-24 z-20 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl text-white shadow-2xl">
-          <div className="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
-            360°
-          </div>
-          <p className="text-sm font-bold uppercase tracking-widest text-white/80">Support</p>
-        </div>
+
       </div>
 
     </section>

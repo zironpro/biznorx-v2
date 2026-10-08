@@ -48,7 +48,7 @@ const services = [
       "Branding",
       "Technical Consulting"
     ],
-    image: "/images/services/digital_technology.jpg",
+    image: "/images/digital.webp",
   },
   { 
     id: "04", 
